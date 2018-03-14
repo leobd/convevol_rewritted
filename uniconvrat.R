@@ -78,7 +78,8 @@ for (i in 1:length(subtr))
 	}
 phy2dist<-unique(unlist(a))
 
-## Computation of the total phenotypic distances in the subtree defined by MRCA, including side branches that are not part of tips lineagedistsub<-NULL
+## Computation of the total phenotypic distances in the subtree defined by MRCA, including side branches that are not part of tips lineage
+distsub<-NULL
 for(i in 1:length(phy2dist))
 	{
 	distsub[i]<-dist(rbind(phentot[phyl$edge[phy2dist,][i,1],],phentot[phyl$edge[phy2dist,][i,2],]))
