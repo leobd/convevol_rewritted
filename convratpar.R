@@ -5,6 +5,9 @@
 	
 convratpar<-function(phyl,phendata,convtips)
 {
+## Required for parallel computing
+require(doMC)
+registerDoMC(detectCores())
 ## Computation of phenotypic values for internal nodes
   phentot<-multiancperso(phyl,phendata)#gros calcul pas necessaire d'avoir tout les ancestral state, pourrais être realisé sur le sous arbre defini par MRCAtips, déjà un peu amelioré en parallelisant multianc
   rownames(phentot)<-c(rownames(phentot)[1:length(phyl$tip.label)],c((1+length(phyl$tip.label)):length(rownames(phentot))))
