@@ -22,7 +22,7 @@ convratpar<-function(phyl,phendata,convtips)
    paires<-combn(convtips,2)
    results<-matrix(data =unlist(foreach(i=1:dim(paires)[[2]]) %dopar% {uniconvrat(phyl, phentot, paires[,i])}),nrow = dim(paires)[[2]], ncol = 4, byrow = TRUE)
    rownames(results)<-paste(paires[1,],paires[2,],sep='-')
-   moy<-colSums(results)
+   moy<-colMeans(results)
    names(moy)<-c("C1","C2","C3","C4")
    out<-list(mean=moy,results=results)
   }
