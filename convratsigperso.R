@@ -2,7 +2,11 @@
 ##           Function from Stayton's convevol R package (2014),                                        ##
 ##           modified for use in Botton-Divet et al (2016)                                             ##
 #########################################################################################################
+## Required for parallel computing
+require(doMC)
+registerDoMC(detectCores())
 
+##
 convratsigperso<-function (phyl, phendata, convtips, nsim) 
 {
     if (class(phyl) != "phylo") 
