@@ -6,7 +6,10 @@
 ###			                      or visit https://github.com/leobd 				                ##
 ##########################################################################################
 ##########################################################################################
-
+## Required for parallel computing
+require(doMC)
+registerDoMC(detectCores())
+##
 multiancperso<-function (phyl, phendata) 
 {
     if (class(phyl) != "phylo") 
