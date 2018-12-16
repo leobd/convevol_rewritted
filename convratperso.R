@@ -19,6 +19,7 @@ ifelse(is.character(conv2)==T,tipvalue2<-which(phyl[["tip.label"]]==conv2),tipva
 
 
 ## Compute lineages
+require(ape)
 mrcatips<-getMRCA(phyl, convtips)
 
 	i=tipvalue1
